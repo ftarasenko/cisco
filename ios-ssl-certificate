@@ -1,0 +1,22 @@
+#Create Root CA Trustpoint
+crypto pki trustpoint USERTrust_CA
+enrollment terminal pem
+#Import Root CA
+crypto pki authenticate USERTrust_CA
+###Enter the base 64 encoded CA certificate.###
+
+#Create Certificate Tustpoint
+crypto pki trustpoint itkey_wildcard2020
+enrollment terminal pem
+#Import Certificate
+crypto pki import itkey_wildcard2020 pem terminal password *****
+% Enter PEM-formatted CA certificate.
+% End with a blank line or "quit" on a line by itself.
+quit
+% Enter PEM-formatted encrypted private General Purpose key.
+% End with "quit" on a line by itself.
+DES KEY REQUIRED
+DEK-Info: DES-EDE3-CBC,431F5B0162AA5791
+quit
+% Enter PEM-formatted General Purpose certificate.
+% End with a blank line or "quit" on a line by itself.
